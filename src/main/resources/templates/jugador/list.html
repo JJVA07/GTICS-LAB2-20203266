@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>list-jugador</title>
+</head>
+<body>
+<h1>Lista de Jugadores</h1>
+<a href="jugador/newForm">Registrar Jugador </a>
+<TABLE border="1">
+    <TR>
+        <TH>Nombre</TH> <TH>Posición</TH> <TH>Acción</TH>
+    </TR>
+    <TR th:each ="j : $ {listaJugadores}">
+
+        <TD th:text="${j.nombre}"></TD> <TD th:text="${j.posicion}"></TD><a th:href="@{'/jugador/delete/' + $ {j.id}}">Eliminar</a>
+    </TR>
+
+</TABLE>
+
+</body>
+</html>
